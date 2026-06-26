@@ -3,10 +3,11 @@ import {
   LogOut, Mail, MailOpen, Trash2, TrendingUp, MessageSquare, RefreshCw,
 } from "lucide-react";
 import {
-  getMessages, markMessageRead, deleteMessage, getStats,
+  getMessages, markMessageRead, deleteMessage, getStats,getRepos,
   type ContactMessage, type StatsDay,
 } from "../../lib/api";
 import { profile } from "../../data/profile";
+import Background from "../../components/Background";
 
 interface Props {
   token: string;
@@ -57,7 +58,9 @@ export default function AdminDashboard({ token, username, onLogout }: Props) {
   const unread = messages.filter((m) => !m.read).length;
 
   return (
+    
     <div className="min-h-screen bg-surface px-5 sm:px-8 py-8">
+      <Background />
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
